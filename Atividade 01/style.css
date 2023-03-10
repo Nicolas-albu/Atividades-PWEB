@@ -1,0 +1,36 @@
+#title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#geral {
+    justify-content: center;
+    display: flex;
+}
+
+.segunda-parte {
+    float: right;
+}
+
+.primeira-parte #texto-do-campo-de-nome {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline;
+}
+
+.primeira-parte #campo-de-nome {
+    display: inline;
+}
+
+.primeira-parte #butao-campo-de-nome{
+    border: 1px;
+    border-radius: 20%;
+    background-color: royalblue;
+    color: white;
+}
+
+.segunda-parte #texto-de-nome {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.segunda-parte #campo-de-nome {
+    float: left;
+}
