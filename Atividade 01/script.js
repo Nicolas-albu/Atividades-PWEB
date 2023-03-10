@@ -18,6 +18,7 @@ function tabButton(){
 
         document.getElementById("campo-de-nome").value = nomeCompletoSeparado[0];
         document.getElementById("campo-de-sobrenome").value = sobrenome.join(" ");
+        document.getElementById("campo-de-nome-completo").value = "";
     } else {
         alert("Não pode inserir número no campo de nome completo");
     }
