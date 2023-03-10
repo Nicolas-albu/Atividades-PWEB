@@ -1,34 +1,43 @@
-#title {
+* {
+    text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #geral {
+    margin-right: auto;
+    margin-left: auto;
     justify-content: center;
     display: flex;
+    width: 800px;
+    border: 0px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.primeira-parte {
+    margin: 70px 100px;
 }
 
 .segunda-parte {
     float: right;
+    padding: 10px 10px;
 }
 
 .primeira-parte #texto-do-campo-de-nome {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: inline;
 }
-
 .primeira-parte #campo-de-nome-completo {
-    display: inline;
+    margin: 2px 5px;
 }
 
-.primeira-parte #butao-separador-de-nome-completo {
+.primeira-parte #botao-separador-de-nome-completo {
     border: 1px;
     border-radius: 20%;
     background-color: royalblue;
     color: white;
-}
-
-.segunda-parte #texto-de-nome {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 50px;
+    height: 30px;
+    font-weight: bold;
 }
 
 .segunda-parte #campo-de-nome {
