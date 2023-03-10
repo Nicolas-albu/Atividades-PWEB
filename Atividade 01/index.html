@@ -7,16 +7,15 @@
     <title>Atividade 01</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 <body>
     <h1 id="title" align="center">1° Atividade</h1>
     <div id="geral" align="center">
         <div class="primeira-parte">
             <p id="texto-do-campo-de-nome" align="left">Nome Completo</p>
-            <input id="campo-de-nome-completo" type="text">
+            <input id="campo-de-nome-completo" type="text" onkeyup="enterBotao(event)">
             <button id="botao-separador-de-nome-completo"
-            align="center" onclick="buttonSeparated()"> <> </button>
+            align="center" onclick="tabButton()"> <> </button>
         </div>
         <div class="segunda-parte">
             <p id="texto-nome">Nome</p>
