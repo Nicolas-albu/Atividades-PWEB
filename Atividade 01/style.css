@@ -16,11 +16,11 @@
     display: inline;
 }
 
-.primeira-parte #campo-de-nome {
+.primeira-parte #campo-de-nome-completo {
     display: inline;
 }
 
-.primeira-parte #butao-campo-de-nome{
+.primeira-parte #butao-separador-de-nome-completo {
     border: 1px;
     border-radius: 20%;
     background-color: royalblue;
