@@ -1,18 +1,21 @@
-var typeRobotrons = ["amarelo", "branco", "preto", "rosa", "vermelho", "azul"];
+var typeRobotrons = ["robotron", "robotron-amarelo", "robotron-branco", "robotron-preto", "robotron-rosa", "robotron-vermelho"];
 
-var position = 0;
+var positionActual = 0;
 
-if (position > typeRobotrons.length || position < 0){
-    position = 0;
-};
+function validadePosition(){
+    if (positionActual > typeRobotrons.length-2) positionActual = typeRobotrons.length-2;
+    if (positionActual < 1) positionActual = 1;
+    console.log("posição: " + positionActual);
+}
 
 function botaoDo(){
-    document.getElementsByClassName("robo")[0].src = "img/robotron-" + typeRobotrons[position] + ".png";
-    //document.getElementById("img-robo").src = "img/robotron-" + typeRobotrons[position] + ".png";
-    position++;
+    validadePosition();
+    positionActual++;
+    document.getElementsByClassName("robo")[0].src = "img/" + typeRobotrons[positionActual] + ".png";
 };
 
 function botaoUndo(){
-    document.getElementsByClassName("robo")[0].src = "img/robotron-" + typeRobotrons[position] + ".png";
-    position--;
+    validadePosition();
+    positionActual--;
+    document.getElementsByClassName("robo")[0].src = "img/" + typeRobotrons[positionActual] + ".png";
 };
