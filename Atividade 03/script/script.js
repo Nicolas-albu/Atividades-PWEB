@@ -23,52 +23,39 @@ function botaoUndo(){
 
 
 
-
-
 //Atividade 04
 
-// ================================SIMPLES=======================================
-//botão +
-const buttonPlus = document.getElementsByClassName("controle-ajuste");
-
-//botão -
-const buttonMinor = document.getElementsByClassName("controle-ajuste minor");
-
-buttonMinor[0].addEventListener("click", alert("test"));
-buttonPlus[0].addEventListener("click", alert("test"));
-
-
-// ================================COMPLETO=======================================
-
 //valor dos contadores (input.value)
-let counterValue = document.getElementsByClassName("controle-contador");
+let counterValue = Array.from(document.getElementsByClassName("controle-contador"));
 
 //botão +
-let buttonPlus = document.getElementsByClassName("controle-ajuste");
+let buttonPlus = Array.from(document.getElementsByClassName("controle-ajuste-major"));
 
 //botão -
-const buttonMinor = document.getElementsByClassName("controle-ajuste minor");
+const buttonMinor = Array.from(document.getElementsByClassName("controle-ajuste-minor"));
 
-/*
-for(let position = 0; position < buttonMinor.length; position++){
-    buttonMinor[position].addEventListener("click", actionOfButtonMinor(position));
-}
-
-for(let position = 0; position < buttonPlus.length; position++){
-    buttonPlus[position].addEventListener("click", actionOfButtonPlus(position));
-}
-*/
-
-for(let positionOfButton = 0; positionOfButton < buttonMinor.length; positionOfButton++){
-    buttonMinor[positionOfButton].addEventListener("click", (positionOfButton) => {
-        //Se o valor do contador da posição não for zero
-        if (!(counterValue[positionOfButton].value == 0))
-            counterValue[positionOfButton].value--;
+document.addEventListener("DOMContentLoaded", (event) => {
+    buttonMinor.map((button) => {
+        button.addEventListener("click", () => {
+            //Se o valor do contador da posição não for zero
+            if (!(button.nextElementSibling.value == 0))
+                button.nextElementSibling.value--;
+        });
     });
-};
 
-for(let positionOfButton = 0; positionOfButton < buttonPlus.length; positionOfButton++){
-    buttonPlus[positionOfButton].addEventListener("click", (positionOfButton) => {
-        counterValue[positionOfButton].value++;
+    buttonPlus.map((button) => {
+        button.addEventListener("click", () => {
+            if (button.previousElementSibling.value != 100)
+                //button.previousElementSibling.value == "00" ? button.previousElementSibling.value = 10 : button.previousElementSibling.value += 10;
+                if (button.previousElementSibling.value == "00") button.previousElementSibling.value = 10;
+                else button.previousElementSibling.value += 10;
+        });
     });
-};
+});
+
+
+
+
+
+
+

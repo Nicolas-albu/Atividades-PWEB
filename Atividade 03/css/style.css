@@ -113,7 +113,7 @@ main {
     padding-top: 8px;
 }
 
-.controle-ajuste {
+.controle-ajuste-minor, .controle-ajuste-major {
     display: inline-block;
     width: 40px;
     height: 40px;
