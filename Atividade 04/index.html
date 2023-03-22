@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <title>Escola Virtual</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <form class="formulario">
+        <header>
+            <h1 class="h1">Escola Virtual</h1>
+            <h3 class="h3">Formulário de Pré-Matrícula</h3>
+        </header>
+
+        <main class="main">
+            <p>Dados Pessoais</p>
+            <label>
+                Nome do Aluno
+                <input class="input-group-text" type="text" name="input-name" required>
+            </label>
+            <label>
+                Nascimento
+                <input class="input-group-text"
+                type="date" 
+                name="input-date" 
+                min="1923-01-01" 
+                max="2023-03-26">
+            </label>
+            <label>
+                Nome da mãe
+                <input class="input-group-text" type="text" name="input-nome">
+            </label>
+            <label>
+                Nome do pai
+                <input class="input-group-text" type="text" name="input-nome">
+            </label>
+            <label for="phone">
+                Telefone
+                <input class="input-group-text" type="tel" name="input-telefone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            </label>
+            <label>
+                Email
+                <input class="input-group-text" type="email" name="input-nome">
+            </label>
+        </main>
+
+        <div class="segunda-parte">
+            <p>Informações de Matrícula</p>
+            <label>
+                Série
+                <select class="form-select">   
+                    <optgroup>
+                        <option selected>Pré-escolar</option>
+                        <option value="1">Ensino Fundamental</option>
+                        <option value="2">Ensino Médio</option>
+                        <option value="3">Ensino Superior</option>
+                    </optgroup> 
+                    
+                </select>
+            </label>
+        </div>
+
+        <footer class="buttons">
+            <input class="btn btn-primary btn-sm" type="button" value="Envia Formulário">
+            <input class="btn btn-primary btn-sm" type="button" value="Limpa Campos">    
+        </footer>
+    </form>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
