@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset=utf-8 />
+    <title>Insert row in a table - w3resource</title>
+    <style>
+        #txtNumRows:invalid {
+            border-color: red;
+            color: red;
+        }
+        #txtNumRows:valid {
+            border-color: green;
+            color: green;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <form>
+        <input 
+        type="text"
+        id="txtNumRows"
+        pattern="^(?:[1-9]|10)$" required/>
+        
+        <button 
+        id="jsAddRows"
+        type="button"
+        onclick="js_add_rows()">Add Rows</button>
+    </form>
+    
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table><br>
+    
+</body>
+</html>
