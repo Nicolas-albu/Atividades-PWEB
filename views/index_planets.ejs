@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetas</title>
+</head>
+<body>
+    <table border="1" align="center">
+        <tr>
+            <th>Corpo</th>
+            <th>Diâmetro</th>
+            <th>Distância média do Sol</th>
+        </tr>
+        <% for (let planetNumber = 0; planetNumber < datas.length; planetNumber++) {%>
+            <tr>
+                <td>
+                    <%= datas[planetNumber].body %>
+                </td>
+                <td>
+                    <%= datas[planetNumber].diameter %>
+                </td>
+                <td>
+                    <%= datas[planetNumber].averageDistanceSun %>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
