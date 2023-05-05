@@ -7,4 +7,4 @@ app.use(route_planets);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.listen(3001);
+app.listen(3002);
