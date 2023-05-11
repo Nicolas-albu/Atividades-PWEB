@@ -1,0 +1,58 @@
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 1rem;
+        margin: 1rem;
+    }
+
+    label {
+        margin: 0.5rem;
+    }
+
+    button {
+        margin: 0.5rem;
+        border: 1px solid red;
+        background-color: red;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    select {
+        width: 20rem;
+        height: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        margin: 0rem 0rem 1rem;
+    }
+</style>
+
+<script>
+    const delSubmit = () => {
+        const selectBook = document.getElementById('select-book');
+        const bookId = selectBook.value;
+    
+        fetch(location.href=`/livros/${bookId}`, {
+            method: 'DELETE'
+        })
+        .catch(error => console.log(error));
+    }
+</script>
+
+<form align="center">
+    <label for="select-book">Escolha um livro abaixo</label>
+    <select name="select-book" id="select-book">        
+
+        <% for (let book of getBooks ) { %>
+
+            <option value= <%= `${book.id}` %> ><%= book.title %></option>
+
+        <% } %>
+
+    </select>
+
+    <button type="submit" onclick=delSubmit()>Apagar</button>
+</form>

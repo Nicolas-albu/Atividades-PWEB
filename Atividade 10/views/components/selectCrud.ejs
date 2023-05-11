@@ -1,0 +1,50 @@
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid gray;
+        border-radius: 1rem;
+        margin: 1rem;
+    }
+
+    label {
+        margin: 0.5rem;
+    }
+
+    button {
+        margin: 0.5rem;
+        border: 1px solid blue;
+        background-color: blue;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+        color: white;
+    }
+
+    select {
+        width: 20rem;
+        height: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        margin: 0rem 0rem 1rem;
+    }
+</style>
+
+<form 
+action="/redirection"
+method="post"
+align="center">
+    <label for="select-crud">Escolha umas das opções abaixo</label>
+    <select name="selectCrud" id="select-crud">
+
+        <% for (let option of options ) { %>
+            
+            <option value="<%= option.type %>"><%= option.name %></option>
+            
+        <% } %>
+            
+    </select>
+        
+    <button type="submit">Selecionar</button>
+</form>

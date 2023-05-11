@@ -1,0 +1,16 @@
+<table border="1" align="center">
+    <tr>
+        <th>ID</th>
+        <th>Título</th>
+    </tr>
+    <% for (let book of getBooks) { %>
+        <tr>
+            <td>
+                <%= book.id %>
+            </td>
+            <td>
+                <%= book.title %>
+            </td>
+        </tr>
+    <% } %>
+</table>
