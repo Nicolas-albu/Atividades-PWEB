@@ -1,11 +1,12 @@
-import bookRoutes from './routes.js';
-import bodyParser from 'body-parser';
 import express from 'express';
+import bodyParser from 'body-parser';
+import bookRoutes from './routes.js';
 
 const app = express();
 
 // Configurations
 app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 app.use(express.json());
 app.use(bookRoutes);
 

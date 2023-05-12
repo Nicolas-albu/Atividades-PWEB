@@ -18,6 +18,7 @@
         background-color: red;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
+        color: white;
     }
 
     select {
@@ -31,20 +32,21 @@
 </style>
 
 <script>
-    const delSubmit = () => {
+    const deleteBookButton = () => {
         const selectBook = document.getElementById('select-book');
         const bookId = selectBook.value;
     
-        fetch(location.href=`/livros/${bookId}`, {
+        fetch(location.href=`/livros/deleteBook/${bookId}`, {
             method: 'DELETE'
         })
-        .catch(error => console.log(error));
+        .then(response => window.alert('Livro deletado com sucesso!'))
+        .catch(error => window.alert(`Ocorreu um erro: ${error}`));
     }
 </script>
 
 <form align="center">
-    <label for="select-book">Escolha um livro abaixo</label>
-    <select name="select-book" id="select-book">        
+    <label>Escolha um livro abaixo para remover</label>
+    <select name="select-book" id="select-book">
 
         <% for (let book of getBooks ) { %>
 
@@ -54,5 +56,5 @@
 
     </select>
 
-    <button type="submit" onclick=delSubmit()>Apagar</button>
+    <button type="submit" onclick="deleteBookButton()">Remover</button>
 </form>

@@ -3,7 +3,7 @@ import express from 'express';
 
 const bookRoutes = express.Router();
 
-// SELECT CRUD
+// SELECT CRUD PAGE
 bookRoutes.get('/', (req, res) => {
     let options = [
         { type: 'createBook', name: 'Adicionar livro' },
@@ -18,56 +18,60 @@ bookRoutes.get('/', (req, res) => {
 // REDIRECTION ROUTE
 bookRoutes.post('/redirection/', (req, res) => {
     const operationCrud = req.body.selectCrud;
-    let host =  operationCrud == 'listBook' ? `/livros` : `/livros/${operationCrud}`;
+    let host =  operationCrud == 'listBook' ? '/livros' : `/livros/${operationCrud}`;
 
     res.redirect(host);
 });
 
-// READ
+// CREATE PAGE
+bookRoutes.get('/livros/createBook', (req, res) => {
+    res.status(200).render('index', { ...parameters, isCreateBook: true });
+});
+
+// READ PAGE
 bookRoutes.get('/livros', (req, res) => {
     res.status(200).render('index', { ...parameters, isListBooks: true, getBooks: bookData });
 });
 
+// UPDATE PAGE
+bookRoutes.get('/livros/updateBook', (req, res) => {
+    res.status(200).render('index', { ...parameters, isUpdateBook: true });
+});
+
+// DELETE PAGE
+bookRoutes.get('/livros/deleteBook', (req, res) => {
+    res.status(200).render('index', { ...parameters, isDeleteBook: true, getBooks: bookData });
+});
+
+// CREATE ROUTE
+bookRoutes.post('/livros/createBook/:title', (req, res) => {
+    bookData.push({ id: nextId(), title:  req.params.title });
+    
+    res.send();
+});
+
+// READ ROUTE
 bookRoutes.get('/livros/:id', (req, res) => {
     let index = bookSearch(req.params.id);
 
     res.json(bookData[index]);
 });
 
-// UPDATE
-bookRoutes.get('/livros/updateBook', (req, res) => {
-    res.status(200).render('index', { ...parameters, isUpdateBook: true });
-});
-
-bookRoutes.put('/livros/updateBook/:id', (req, res) => {
+// UPDATE ROUTE
+bookRoutes.put('/livros/updateBook/:id/:title', (req, res) => {
     let index = bookSearch(req.params.id);
-    bookData[index].title = req.body.title;
+    bookData[index].title = req.params.title;
+    // bookData[index].title = req.body.title;
     
-    res.json(bookData);
+    res.send();
 });
 
-// CREATE
-bookRoutes.get('/livros/createBook', (req, res) => {
-    console.log({ ...parameters, isCreateBook: true });
-    res.status(200).render('test', { ...parameters, isCreateBook: true });
-});
-
-bookRoutes.post('/livros/createBook/:title', (req, res) => {
-    bookData.push({ id: nextId(), title: req.params.title });
-    
-    res.json(bookData);
-});
-
-// DELETE
-bookRoutes.get('/livros/deleteBook', (req, res) => {
-    res.status(200).render('index', { ...parameters, isDeleteBook: true });
-});
-
+// DELETE ROUTE
 bookRoutes.delete('/livros/deleteBook/:id', (req, res) => {
     let index = bookSearch(req.params.id);
-    bookData.pop(bookData[index]);
+    bookData.splice(index, 1);
 
-    res.json(bookData);
+    res.send();
 });
 
 

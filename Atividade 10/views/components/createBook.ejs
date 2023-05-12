@@ -18,6 +18,7 @@
         background-color: green;
         border-radius: 1rem;
         padding: 0.5rem 1rem;
+        color: white;
     }
 
     select {
@@ -31,29 +32,20 @@
 </style>
 
 <script>
-    const createSubmit = () => {};
-    // () => {
-    //     const selectBook = document.getElementById('select-book');
-    //     const bookId = selectBook.value;
-    
-    //     fetch(location.href=`/livros/${bookId}`, {
-    //         method: 'DELETE'
-    //     })
-    //     .catch(error => console.log(error));
-    // }
+    const createBookButton = () => {
+        const bookTitle = document.getElementById('input-title').value;
+
+        fetch(location.href=`/livros/createBook/${bookTitle}`, {
+            method: 'POST'
+        })
+        .then(response => window.alert('Livro adicionado com sucesso!'))
+        .catch(error => window.alert(`Ocorreu um erro: ${error}`));
+    }
 </script>
 
 <form align="center">
-    <label for="select-book">Escolha umas das opções abaixo</label>
-    <select name="select-crud" id="select-crud">
+    <label>Escreva o título do livro a ser adicionado</label>
+    <input type="text" name="title" id="input-title" placeholder="Título">
 
-        <% for (let option of options ) { %>
-
-            <option value= <%= `${option.host}` %> ><%= option.name %></option>
-
-        <% } %>
-
-    </select>
-
-    <button type="submit" onclick=createSubmit()>Criar</button>
+    <button type="submit" onclick="createBookButton()">Adicionar</button>
 </form>

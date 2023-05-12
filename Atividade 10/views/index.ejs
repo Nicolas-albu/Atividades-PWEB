@@ -9,15 +9,11 @@
 <body>
     <h1 align="center">Curso de Node.js</h1>
 
-    <% console.log('isSelectCrud: ' + isSelectCrud); %>
-    <% console.log('isCreateBook: ' + isCreateBook); %>
-
     <% if (isSelectCrud != null) { %>
         
         <%- include('./components/selectCrud', { options }); %>
 
-    <% } %> 
-    <% if (isCreateBook != null) { %>
+    <% } else if (isCreateBook != null) { %>
     
         <%- include('./components/createBook'); %>
 
@@ -25,14 +21,13 @@
         
         <%- include('./components/listBook', { getBooks }); %>
     
-    <% } %>
-    <% if (isUpdateBook != null) { %>
+    <% } else if (isUpdateBook != null) { %>
     
         <%- include('./components/updateBook'); %>
     
     <% } else if (isDeleteBook != null) { %>
     
-        <%- include('./components/deleteBook'); %>
+        <%- include('./components/deleteBook', { getBooks }); %>
 
     <% } %>
 
